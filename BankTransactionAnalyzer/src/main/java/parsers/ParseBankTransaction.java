@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author mateus
  */
-public interface ParseFromFile {
+public interface ParseBankTransaction {
     public BankTransaction createBankTransaction(String line);
-    public List<BankTransaction> getAllTransactions(List<String> lines);
+    public List<BankTransaction> getAllTransactions();
 }

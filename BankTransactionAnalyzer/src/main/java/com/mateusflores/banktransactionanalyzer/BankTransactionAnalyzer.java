@@ -4,6 +4,13 @@
 
 package com.mateusflores.banktransactionanalyzer;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import parsers.ParseBankTransaction;
+import parsers.ParseBankTransactionCsv;
+import entities.BankTransaction;
+
 /**
  *
  * @author mateus
@@ -11,6 +18,16 @@ package com.mateusflores.banktransactionanalyzer;
 public class BankTransactionAnalyzer {
 
     public static void main(String[] args) {
+        String src = "C:\\repos\\Book_RWSD_Java\\BankTransactionAnalyzer\\src\\main\\java\\resources\\extrato.csv";
+        File file = new File(src);
+        
+        ParseBankTransaction parser = new ParseBankTransactionCsv(file);
+        List<BankTransaction> transactions = new ArrayList<>();
+        transactions = parser.getAllTransactions();
+        
+        for (BankTransaction b : transactions) {
+            System.out.println(b.toString());
+        }
         
     }
 }
