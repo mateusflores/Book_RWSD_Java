@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author mateus
  */
-public class BankTransaction {
+public class BankTransaction implements Comparable<BankTransaction> {
     private LocalDate date;
     private Double amount;
     private String category;
@@ -64,4 +64,14 @@ public class BankTransaction {
         }
         return Objects.equals(this.amount, other.amount);
     }    
+    
+    public int compareTo(BankTransaction anotherTransaction) {
+        if (this.getAmount() < anotherTransaction.getAmount()) {
+            return -1;
+        } else if (this.getAmount() > anotherTransaction.getAmount()) {
+            return 1;
+        }
+        
+        return 0;
+    }
 }

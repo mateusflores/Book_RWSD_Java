@@ -15,7 +15,7 @@ import entities.BankTransaction;
  *
  * @author mateus
  */
-public class BankTransactionAnalyzer {
+public class MainApplication {
 
     public static void main(String[] args) {
         String src = "C:\\repos\\Book_RWSD_Java\\BankTransactionAnalyzer\\src\\main\\java\\resources\\extrato.csv";
