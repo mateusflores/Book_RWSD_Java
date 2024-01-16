@@ -30,8 +30,7 @@ public class ParseBankTransactionCsv implements ParseBankTransaction {
 
     @Override
     public BankTransaction createBankTransaction(String line) {
-        String[] fields = new String[3];
-        fields = line.split(",");
+        String[] fields = line.split(",");
         
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         BankTransaction bankTransaction = new BankTransaction(LocalDate.parse(fields[0], dtf), Double.parseDouble(fields[1]), fields[2]);
