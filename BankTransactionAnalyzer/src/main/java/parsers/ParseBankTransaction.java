@@ -1,6 +1,7 @@
 package parsers;
 
 import entities.BankTransaction;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface ParseBankTransaction {
     public BankTransaction createBankTransaction(String line);
-    public List<BankTransaction> getAllTransactions();
+    public List<BankTransaction> getAllTransactions(File file);
 }

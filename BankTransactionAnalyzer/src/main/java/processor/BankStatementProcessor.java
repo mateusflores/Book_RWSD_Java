@@ -6,6 +6,7 @@ package processor;
 
 import entities.BankTransaction;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -55,11 +56,17 @@ public class BankStatementProcessor {
         return amount;
     }
     
-    public List<BankTransaction> showHigherExpenses() {
-        List<BankTransaction> higherExpensesList;
+    public List<BankTransaction> getHigherExpenses() {
+        List<BankTransaction> higherExpensesList = new ArrayList<>();
         Collections.sort(list);
         
-        higherExpensesList = list.subList(0, 9);
+        int count = 0;
+        for (BankTransaction bt : list) {
+            if (bt.getAmount()<0 && count<10) {
+                higherExpensesList.add(bt);
+                count++;
+            }
+        }
         
         return higherExpensesList;
     }

@@ -24,8 +24,7 @@ public class ParseBankTransactionCsv implements ParseBankTransaction {
     
     private File file;
 
-    public ParseBankTransactionCsv(File file) {
-        this.file = file;
+    public ParseBankTransactionCsv() {
     }
 
     @Override
@@ -39,7 +38,7 @@ public class ParseBankTransactionCsv implements ParseBankTransaction {
     }
 
     @Override
-    public List<BankTransaction> getAllTransactions() {
+    public List<BankTransaction> getAllTransactions(File file) {
         List<String> lines = readFromCsv(file);
         List<BankTransaction> bankTransactionList = new ArrayList<>();
         
